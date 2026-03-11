@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Online Book Finder</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by title (e.g., JavaScript)...">
+                <button onclick="searchBooks()">Search</button>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div>
+                <strong>Filter Category:</strong>
+                <button onclick="filterCategory('Programming')">Programming</button>
+                <button onclick="filterCategory('Data Science')">Data Science</button>
+                <button onclick="filterCategory('Database')">Database</button>
+            </div>
+            <div>
+                <strong>Sort By:</strong>
+                <button onclick="sortBooks('price')">Price (Low to High)</button>
+                <button onclick="sortBooks('rating')">Rating (High to Low)</button>
+            </div>
+            <div>
+                <strong>Quick Views:</strong>
+                <button onclick="getTopRated()" class="special-btn">Top Rated (4.0+)</button>
+                <button onclick="resetView()">Reset / View All</button>
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="book-grid">
+            </div>
+
+        <div class="pagination">
+            <button id="loadMoreBtn" onclick="loadMore()">Load More (Pagination)</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
